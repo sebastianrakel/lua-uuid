@@ -23,6 +23,7 @@ lua_uuid.so: lua_uuid.o
 	$(CC) -c $(CFLAGS) -fPIC $(LUA_INCDIR) $(UUID_INCDIR) $< -o $@
 
 install: lua_uuid.so
+	mkdir -p $(INSTALL_PATH)
 	install -D -s lua_uuid.so $(INSTALL_PATH)/lua_uuid.so
 
 clean:
